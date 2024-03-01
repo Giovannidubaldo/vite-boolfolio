@@ -28,8 +28,10 @@ export default {
 </script>
 
 <template lang="">
-    <div>
-        <ProjectCard v-for="project, index in projects" :key="index" :project="project"/>
+    <div class="container my-5">
+        <div class="row">
+            <ProjectCard v-for="project, index in projects" :key="index" :project="project"/>
+        </div>
     </div>
 </template>
 
