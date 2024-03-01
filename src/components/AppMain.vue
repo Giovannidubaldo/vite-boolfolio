@@ -1,6 +1,11 @@
 <script>
 export default {
-
+    name: 'AppMain',
+    data() {
+        return {
+            projects: [],
+        }
+    }
 }
 </script>
 
@@ -10,6 +15,4 @@ export default {
     </div>
 </template>
 
-<style lang="">
-    
-</style>
+<style lang="scss"></style>
