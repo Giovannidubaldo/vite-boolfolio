@@ -1,6 +1,11 @@
 <script>
+import { store } from '../store';
 export default {
-
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
@@ -13,11 +18,8 @@ export default {
                         Boolfolio
                     </h2>
                     <ul class="list-unstyled d-flex">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Progetti</a>
+                        <li v-for="item, index in store.menuHeader" :key="index">
+                            <router-link :to="{name: item.name}">{{item.label}}</router-link>
                         </li>
                     </ul>
                 </div>
