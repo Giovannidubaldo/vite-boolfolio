@@ -4,7 +4,7 @@ import { store } from '../store.js';
 import axios from 'axios';
 
 export default {
-    name: 'AppMain',
+    name: 'AppProject',
     components: {
         ProjectCard,
     },
