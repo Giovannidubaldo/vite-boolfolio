@@ -5,8 +5,11 @@ export default {
 </script>
 
 <template lang="">
-    <div>
-        <h1> ciao </h1>
+    <div class="container my-4">
+        <div class="row">
+            <h3 class="text-center text-uppercase"> Boolfolio </h3>
+            <p class="text-center"> Il tuo portafoglio di progetti creati e tanto altro! </p>
+        </div>
     </div>
 </template>
 

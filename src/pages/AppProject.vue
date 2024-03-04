@@ -30,6 +30,7 @@ export default {
 <template lang="">
     <div class="container my-5">
         <div class="row">
+            <h4>Ecco i tuoi progetti:</h4>
             <ProjectCard v-for="project, index in projects" :key="index" :project="project"/>
         </div>
     </div>
