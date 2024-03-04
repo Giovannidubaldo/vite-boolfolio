@@ -1,2 +1,22 @@
 @use './partials/variables' as *;
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+header {
+    background-color: #161d20;
+    color: #198754;
+
+    ul {
+        li {
+            margin: 20px;
+
+            a {
+                text-decoration: none;
+                color: #198754;
+
+                &:hover {
+                    color: #2ed386;
+                }
+            }
+        }
+    }
+}
