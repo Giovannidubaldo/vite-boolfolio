@@ -28,12 +28,14 @@ export default {
 
 <template lang="">
     <div class="col-4 mt-5">
-        <div class="card">
-            <img :src="getImage()" alt="" class="card-img-top">
-            <div class="card-body">
-                <h4 class="text-center text-capitalize">{{project.name}}</h4>
+        <router-link :to="{name: 'single-card', params: {slug: project.slug}}">
+            <div class="card">
+                <img :src="getImage()" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="text-center text-capitalize">{{project.name}}</h4>
+                </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
