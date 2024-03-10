@@ -11,11 +11,14 @@ export default {
             email: '',
             phone: '',
             message: '',
-            
+            success: false,
+            loading: false
         }
     },
     methods: {
         sendform(){
+            this.loading = true;
+
             const data = {
                 name: this.name,
                 surname: this.surname,
@@ -25,7 +28,16 @@ export default {
             }
 
             axios.post(`${this.store.baseUrl}/api/contacts`, data).then((response) => {
-                console.log(response.data);
+                if(response.data.success){
+                    this.name = '',
+                    this.surname = '',
+                    this.email = '',
+                    this.phone = '',
+                    this.message = '',
+
+                    this.success = true
+                }
+                this.loading = false;
             })
         }
     },
@@ -34,6 +46,13 @@ export default {
 
 <template lang="">
     <div>
+        <div class="row" v-if="success">
+            <div class="col-12">
+                <div class="alert alert-success">
+                    Email inviata con successo
+                </div>
+            </div>
+        </div>
         <form @submit.prevent="sendform()" method="post">
             <div class="row">
                 <div class="col-6 mb-2">
@@ -56,7 +75,7 @@ export default {
                     <textarea name="message" id="message" cols="30" rows="10" class="form-control" v-model="message" placeholder="Messaggio"></textarea>
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-sm btn-success" type="submit">Invia</button>
+                    <button class="btn btn-sm btn-success" type="submit" :disabled="loading">{{loading ? 'Invio in corso...' : 'Invia'}}</button>
                 </div>
             </div>
         </form>
