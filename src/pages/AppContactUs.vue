@@ -1,13 +1,22 @@
 <script>
+import ContactForm from '../components/ContactForm.vue';
 export default {
-    name: 'AppContactUs'
+    name: 'AppContactUs',
+    components:{
+        ContactForm,
+    }
 }
 </script>
 
 <template lang="">
-    <div class="container">
+    <div class="container my-4">
         <div class="row">
-            <h1>Contatti</h1>
+            <div class="col-12">
+                <h1>Contatti</h1>
+            </div>
+            <div class="col-12 mt-4">
+                <ContactForm />
+            </div>
         </div>
     </div>
 </template>
