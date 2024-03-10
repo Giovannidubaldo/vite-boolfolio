@@ -1,12 +1,40 @@
 <script>
+import axios from 'axios';
+import {store} from '../store.js';
 export default {
-    name: 'ContactForm'
+    name: 'ContactForm',
+    data(){
+        return{
+            store,
+            name: '',
+            surname: '',
+            email: '',
+            phone: '',
+            message: '',
+            
+        }
+    },
+    methods: {
+        sendform(){
+            const data = {
+                name: this.name,
+                surname: this.surname,
+                email: this.email,
+                phone: this.phone,
+                message: this.message,
+            }
+
+            axios.post(`${this.store.baseUrl}/api/contacts`, data).then((response) => {
+                console.log(response.data);
+            })
+        }
+    },
 }
 </script>
 
 <template lang="">
     <div>
-        <form action="sendform()" method="post">
+        <form @submit.prevent="sendform()" method="post">
             <div class="row">
                 <div class="col-6 mb-2">
                     <label for="name">Nome</label>
