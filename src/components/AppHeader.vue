@@ -27,6 +27,10 @@ export default {
                             <router-link :to="{name: item.name}">{{item.label}}</router-link>
                         </li>
                     </ul>
+                    <ul class="list-unstyled d-flex">
+                        <li>Login</li>
+                        <li>Register</li>
+                    </ul>
                 </div>
             </div>
         </div>

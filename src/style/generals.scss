@@ -6,13 +6,19 @@ header {
     color: #198754;
 
     .logo {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
     }
 
     ul {
         li {
             margin: 20px;
+            color: #198754;
+            cursor: pointer;
+
+            &:hover {
+                color: #2ed386;
+            }
 
             a {
                 text-decoration: none;
@@ -21,6 +27,31 @@ header {
                 &:hover {
                     color: #2ed386;
                 }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #161d20;
+    color: #fff;
+
+    h2,
+    h4 {
+        color: #198754;
+    }
+
+    ul {
+        li {
+            padding: 5px;
+            cursor: pointer;
+
+            &:hover {
+                color: #198754;
+            }
+
+            i {
+                font-size: 30px;
             }
         }
     }
